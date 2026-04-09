@@ -240,3 +240,47 @@ The marketing mentions 5,000 business cards/month and seven Louisville kiosks. T
 ### Takeaway
 
 The marketing page describes the app BigBurgh was *designed to be*. This report describes the app BigBurgh *actually is* today. The gap is significant — particularly around Live Help (marketed as working, found broken), the dial UI (marketed as innovative, found unusable), and data freshness (marketed as a priority, no visible mechanism). The crisis resources appear to be the one feature that lives up to the marketing.
+
+---
+
+## Appendix: Terms of Service Analysis (bigburgh.com/#/about-app)
+
+The About/TOS page contains both a description of the app and a full Terms of Service. The TOS is built from a free Contractology/freenetlaw template, which is acknowledged at the bottom of the document. While boilerplate terms are normal for small projects, several provisions are revealing when read alongside the app's stated mission and the findings above.
+
+### 1. Intellectual Property Claims Over the UI Patterns
+
+The TOS states: *"the map overlays, and the 'look and feel' of the dial interfaces, the distinction between everyday needs and urgent needs, and the Live Street Help function are the intellectual property of Informing Design, Inc."*
+
+The dial UI — identified in this report as the app's core usability problem — is a proprietary asset that Informing Design claims ownership over and licenses to other cities. This creates a structural conflict: the dials *are* the product being sold, which means replacing them with standard, accessible UI patterns would undermine the commercial differentiator. The homeless population's usability needs become secondary to the commercial value of a distinctive interface.
+
+### 2. "No Warranties" on Information Accuracy — for a Crisis Resource App
+
+The TOS states: *"Informing Design does not warrant that... the information on this website is complete, true, accurate or non-misleading."*
+
+This is standard legal boilerplate. However, when the marketing page claims "information that is absolutely, positively up to date" and the app directs vulnerable people to shelters and crisis services, the disclaimer creates a stark contradiction. The marketing sells trust in the data; the legal terms disclaim it entirely.
+
+### 3. Anti-Scraping Clause Blocks What Would Help Most
+
+The TOS states: *"You must not conduct any systematic or automated data collection activities (including without limitation scraping, data mining, data extraction and data harvesting)"*
+
+This prevents other organizations from programmatically accessing the service directory — directly conflicting with the idea of an open data API. Information about free public services is being treated as proprietary content.
+
+### 4. Aggressive User Content Rights Grant
+
+The TOS states: *"You grant to Informing Design a worldwide, irrevocable, non-exclusive, royalty-free license to use, reproduce, adapt, publish, translate and distribute your user content"*
+
+For what amounts to a feedback form (which appears non-functional anyway), this is an unusually aggressive rights grant. Users submitting corrections about shelter hours would be signing over worldwide, irrevocable content rights.
+
+### 5. HCEF/Informing Design Entity Confusion
+
+The indemnity section reads: *"You hereby indemnify HCEF and undertake to keep Informing Design indemnified"* — mixing up the two organizations mid-sentence. This is a find-and-replace error from adapting the template, suggesting the legal terms were not carefully reviewed.
+
+### 6. Ownership Transition: Public Project to Private Product
+
+The TOS states: *"Welcome to the BigBurgh.com website, which is now operated directly by Informing Design, Inc."*
+
+The app was originally an HCEF project funded by Pittsburgh foundations. The TOS confirms that Informing Design now operates it directly. Combined with the IP claims and the Louisville expansion (marketed as a commercial offering), a publicly-funded community resource appears to have been absorbed into a private company's product portfolio, with the proprietary dial UI as the differentiating asset being licensed to new cities.
+
+### Takeaway
+
+The TOS reinforces the report's technical findings and adds a structural dimension: the app's problems are not just technical debt or neglect. They are tied to a business model that treats the UI novelty and service data as proprietary commercial assets. A truly mission-driven app would use standard UI patterns and open data. BigBurgh cannot do that without giving away what Informing Design is selling.
