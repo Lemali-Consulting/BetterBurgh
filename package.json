@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "build:db": "tsx scripts/build-db.ts",
-    "prebuild": "npm run build:db",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
