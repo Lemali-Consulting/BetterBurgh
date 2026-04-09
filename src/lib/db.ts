@@ -29,8 +29,7 @@ let _db: Database.Database | null = null;
 
 function getDb(): Database.Database {
   if (!_db) {
-    _db = new Database(findDbPath(), { readonly: true });
-    _db.pragma("journal_mode = WAL");
+    _db = new Database(findDbPath(), { readonly: true, fileMustExist: true });
   }
   return _db;
 }

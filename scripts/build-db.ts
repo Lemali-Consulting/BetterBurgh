@@ -74,7 +74,7 @@ function main() {
   // Remove old DB
   if (existsSync(DB_PATH)) unlinkSync(DB_PATH);
   const db = new Database(DB_PATH);
-  db.pragma("journal_mode = WAL");
+  db.pragma("journal_mode = DELETE");
 
   // ─── Create Schema ──────────────────────────────────────
   db.exec(`
