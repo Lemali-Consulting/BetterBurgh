@@ -186,3 +186,57 @@ Each service card should show at a glance:
 BigBurgh has the right idea -- a curated, free, mobile-friendly directory of homeless services in Pittsburgh. Its demographic filtering, crisis resource prominence, and location-aware listings are solid concepts. But the execution is severely hampered by an overly clever UI that's difficult to use, inaccessible, buggy, and outdated. The "Live Help" feature appears broken. The app is invisible to search engines and unusable offline.
 
 A better alternative would prioritize **simplicity, accessibility, and reliability** over visual novelty. Standard UI patterns, server-rendered content, offline capability, and a search-first approach would make the same information dramatically more useful to the people who need it most.
+
+---
+
+## Appendix: Marketing vs. Reality (informingdesign.com/bigburgh)
+
+The following analysis contrasts how BigBurgh is presented on Informing Design's marketing page with the hands-on findings documented above.
+
+### What the Marketing Page Claims
+
+- BigBurgh "broke the mold" by serving police officers, professionals, bystanders, and homeless individuals.
+- The app operates in Pittsburgh and Louisville (as LouieConnect.com), with expansion planned to two additional cities.
+- Founder Bob Firth identified existing homeless apps as "slow or cumbersome or both" and designed BigBurgh to be "effortless" with "relevant, up-to-date information in an instant."
+- The UI features "spinning dials in the cloud" and established "a model for continuous agency engagement on the ground."
+- The app achieved "unprecedented levels of usage" after three years in Pittsburgh and one in Louisville, generating "several times the usage (per capita)" compared to Australia's Ask Izzy app.
+- The "Live Help" panic button sends mass emails to outreach professionals, with response times averaging "20 minutes or less" in Pittsburgh (operating 12 hours daily, 6 days weekly).
+- The "Hotline/Safe Place Panic Button" receives "hundreds of uses per month" in Pittsburgh and Louisville.
+- The app is built on "modern software frameworks" and Google's Firebase cloud database.
+- Each city operates via a web dashboard with analytics tracking usage by service type, user category, and time periods.
+- 5,000 business cards are printed monthly for distribution; seven kiosks are deployed in Louisville.
+- Testimonial from Cathe Dykstra (Family Scholar House, Louisville): "I love talking about how we brought BigBurgh to Louisville and how we are using it for the benefit of our entire community."
+
+### Where Marketing and Reality Align
+
+- **Origin and partners**: Both sources agree on the Pittsburgh Bureau of Police + HCEF collaboration and the core goal of connecting homeless individuals with services.
+- **Crisis resources**: The marketing highlights the "Hotline/Safe Place Panic Button" getting "hundreds of uses per month." Hands-on testing confirms crisis resources are prominent and well-organized. This appears to be the app's strongest feature in practice.
+- **Web app (no app store)**: Both agree on this approach, which is genuinely a good choice for the target population.
+
+### Where Marketing Diverges from Reality
+
+#### 1. "Spinning dials" — Presented as Innovation, Found to Be the Core Problem
+The marketing frames the pie-chart dial UI as a breakthrough. Hands-on testing identifies it as the app's biggest usability failure: invisible overlay divs, click interception bugs, no accessibility, and poor mobile touch targets. What's marketed as "inviting and fast-acting" is in practice extremely difficult to use.
+
+#### 2. "Unprecedented levels of usage" — Unverifiable
+The marketing claims usage "several times per capita" compared to Ask Izzy. No data source is provided. Given the broken navigation, non-indexable SPA, and lack of search, these numbers are hard to reconcile with the actual user experience.
+
+#### 3. Live Help — Flagship Feature vs. Broken Feature
+The marketing describes a working panic button system with 20-minute response times and reply-all email coordination. Testing found the Live Help button navigates to the service categories page instead — it appears non-functional or decommissioned. This is the single biggest gap between marketing and reality.
+
+#### 4. "Effortless" and "Up-to-Date Information in an Instant"
+- **Effortless**: Testing documented that direct URLs don't work, there's no search, no back button support, and the demographic gate forces a multi-step flow before any content is visible.
+- **Up-to-date**: The marketing mentions needing "one full-time staff member per million population" for data maintenance, but the app has no "last verified" dates, no self-update portal for providers, and no community reporting mechanism.
+
+#### 5. Louisville Expansion — Framed as Growth, But Reveals Configuration Issues
+The marketing presents Louisville (LouieConnect.com) as successful expansion. Testing found the map defaulted to Louisville, KY instead of Pittsburgh, suggesting possible configuration issues or that the Pittsburgh instance may be deprioritized.
+
+#### 6. "Modern Software Frameworks" and Firebase
+The marketing emphasizes technical modernity. Testing found a JavaScript SPA with no server-side rendering, no offline support, no PWA features, and content invisible to search engines — problems that genuinely modern frameworks solve out of the box.
+
+#### 7. Physical Distribution Compensating for Digital Discoverability Failure
+The marketing mentions 5,000 business cards/month and seven Louisville kiosks. This physical distribution strategy may be compensating for the fact that the app is completely invisible to search engines — someone Googling "free meals Pittsburgh homeless" will never find it.
+
+### Takeaway
+
+The marketing page describes the app BigBurgh was *designed to be*. This report describes the app BigBurgh *actually is* today. The gap is significant — particularly around Live Help (marketed as working, found broken), the dial UI (marketed as innovative, found unusable), and data freshness (marketed as a priority, no visible mechanism). The crisis resources appear to be the one feature that lives up to the marketing.
