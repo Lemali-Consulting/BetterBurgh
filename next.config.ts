@@ -1,12 +1,19 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Bundle better-sqlite3 as a server external so it works in serverless
   serverExternalPackages: ["better-sqlite3"],
 
-  // Ensure the .db file is included in the serverless function bundle
   outputFileTracingIncludes: {
-    "/**": ["./betterburgh.db"],
+    "/": ["./betterburgh.db"],
+    "/[locale]": ["./betterburgh.db"],
+    "/[locale]/services": ["./betterburgh.db"],
+    "/[locale]/services/[slug]": ["./betterburgh.db"],
+    "/[locale]/crisis": ["./betterburgh.db"],
+    "/[locale]/map": ["./betterburgh.db"],
+    "/[locale]/about": ["./betterburgh.db"],
+    "/[locale]/categories/[category]": ["./betterburgh.db"],
+    "/api/offline-data": ["./betterburgh.db"],
+    "/api/event": ["./betterburgh.db"],
   },
 };
 

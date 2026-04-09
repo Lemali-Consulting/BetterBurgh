@@ -1,5 +1,6 @@
 import Database from "better-sqlite3";
-import { resolve } from "path";
+import { resolve, join } from "path";
+import { existsSync } from "fs";
 import type {
   Service,
   CategoryInfo,
@@ -8,13 +9,27 @@ import type {
   SearchFilters,
 } from "@/types";
 
-const DB_PATH = resolve(process.cwd(), "betterburgh.db");
+// Try multiple paths to find the DB file — process.cwd() works locally,
+// but on Vercel serverless we need to look relative to the bundle.
+function findDbPath(): string {
+  const candidates = [
+    resolve(process.cwd(), "betterburgh.db"),
+    join(__dirname, "..", "..", "betterburgh.db"),
+    join(__dirname, "..", "..", "..", "betterburgh.db"),
+    join(__dirname, "..", "..", "..", "..", "betterburgh.db"),
+  ];
+  for (const p of candidates) {
+    if (existsSync(p)) return p;
+  }
+  // Fallback to cwd — will produce a clear error if missing
+  return resolve(process.cwd(), "betterburgh.db");
+}
 
 let _db: Database.Database | null = null;
 
 function getDb(): Database.Database {
   if (!_db) {
-    _db = new Database(DB_PATH, { readonly: true });
+    _db = new Database(findDbPath(), { readonly: true });
     _db.pragma("journal_mode = WAL");
   }
   return _db;
