@@ -10,9 +10,10 @@ const DEFAULT_CENTER: [number, number] = [40.4406, -79.9959];
 const DEFAULT_ZOOM = 13;
 
 function buildPinHtml(color: string, emoji: string): string {
-  // Teardrop pin with emoji on top. Inline styles so we don't need extra CSS.
+  // Leaflet positions the 32x42 box via iconAnchor — don't add a CSS transform
+  // on top of that or the visible pin drifts away from the popup tip.
   return `
-    <div style="position:relative;width:32px;height:42px;transform:translate(-50%,-100%);filter:drop-shadow(0 1px 2px rgba(0,0,0,0.4));">
+    <div style="position:relative;width:32px;height:42px;filter:drop-shadow(0 1px 2px rgba(0,0,0,0.4));">
       <svg width="32" height="42" viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg">
         <path d="M16 0 C7.2 0 0 7.2 0 16 C0 28 16 42 16 42 C16 42 32 28 32 16 C32 7.2 24.8 0 16 0 Z" fill="${color}" stroke="white" stroke-width="2"/>
         <circle cx="16" cy="16" r="10" fill="white"/>
